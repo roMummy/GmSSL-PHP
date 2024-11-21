@@ -74,12 +74,15 @@ jobs:
                     gmssl version
                 
                     
-                - name: phpize
-                  working-directory: ${{ github.workspace }}
-                  run: phpize
+                # - name: phpize
+                #   working-directory: ${{ github.workspace }}
+                #   run: phpize
+                - name: build
+                  run: buildconf
+                  
                   
                 - name: config
-                  run: ./configure --with-gmssl
+                  run: ./configure --enable-gmssl=shared
                 - name: log
                   run: ls ${{ github.workspace }}
 
