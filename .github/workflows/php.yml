@@ -74,9 +74,16 @@ jobs:
                     gmssl version
                     phpize
 
-
+                - name: aaa
+                  working-directory: ${{ github.workspace }}
+                  run: |
+                    mkdir aaa
+                    cd aaa
+                    
                 - name: cmake
+                  working-directory: ${{ github.workspace }}\aaa
                   run: cmake .. -G "NMake Makefiles" -DWIN32=ON
+                  
                 - name: nmake
                   run: nmake
                    
