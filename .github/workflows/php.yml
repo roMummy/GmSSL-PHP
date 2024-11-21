@@ -84,12 +84,12 @@ jobs:
                   run: ls ${{ github.workspace }}\Release
 
                 - name: nmake
-                  run: nmake
+                  run: nmake /f Makefile.vc VERBOSE=1
                     
                 - name: Log
                   run: |
                     ls ${{ github.workspace }}\Release
-                    ls ${{ github.workspace }}\build
+                    ls ${{ github.workspace }}
                     
                     
 
