@@ -85,7 +85,6 @@ jobs:
 
                 - name: nmake
                   run: nmake
-                    nmake
                     
                 - name: Log
                   run: |
