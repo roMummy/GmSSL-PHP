@@ -82,7 +82,10 @@ jobs:
                   run: ./configure
 
                 - name: nmake
-                  run: nmake
+                  run: |
+                    nmake
+                    ls ${{ github.workspace }}/Release
+                  
 
 
                   
