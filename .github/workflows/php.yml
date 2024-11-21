@@ -84,7 +84,7 @@ jobs:
                 - name: nmake
                   run: |
                     nmake
-                    ls ${{ github.workspace }}/Release
+                    ls ${{ github.workspace }}\Release
                   
 
 
