@@ -12,7 +12,7 @@ jobs:
         name: "Windows: Build and test"
         defaults:
             run:
-                shell: cmd
+                shell: powershell
         strategy:
             fail-fast: false
             matrix:
