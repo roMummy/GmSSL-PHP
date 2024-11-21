@@ -1,7 +1,12 @@
 ARG_ENABLE('gmssl', 'gmssl support', 'no');
 
 if (PHP_GMSSL != 'no') {
-	AC_DEFINE('HAVE_GMSSL', 1, 'gmssl support enabled');
+    AC_DEFINE('HAVE_GMSSL', 1, 'gmssl support enabled');
 
-	EXTENSION('gmssl', 'gmssl.c', null, '/DZEND_ENABLE_STATIC_TSRMLS_CACHE=1');
+    # 针对 Windows 平台配置包含路径和库路径
+    PHP_ADD_INCLUDE('$with_gmssl/include');
+    PHP_ADD_LIBRARY('$with_gmssl/lib');
+    
+    EXTENSION('gmssl', 'gmssl.c', null, '/DZEND_ENABLE_STATIC_TSRMLS_CACHE=1');
 }
+
