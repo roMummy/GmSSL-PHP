@@ -53,7 +53,7 @@ jobs:
                   
                 - name: ls
                   run:  Get-ChildItem -Path ${{ github.workspace }} -Recurse -Filter "*version.h*"
-          
+              
           
                 - name: Add custom path to PATH
                   run: |
@@ -62,16 +62,20 @@ jobs:
                     $env:PATH = "$newPath;$env:PATH"
                     echo "PATH updated: $env:PATH"
                     echo "PATH=$env:PATH" >> $env:GITHUB_ENV  # 将更新后的 PATH 环境变量保存到 GITHUB_ENV 中，供后续步骤使用
-          
+              
                 - name: Verify PATH is updated
                   run: |
                     echo "Verifying PATH"
                     echo $env:PATH
-          
+                    
                 - name: Log GMSSL
                   working-directory: ${{ github.workspace }}\build
                   run: |
                     gmssl version
+
+                - name: include
+                  run: cl.exe ... -I "${{ github.workspace }}\gmssl\GmSSL-3.1.1\include" ...
+          
                 
                     
                 - name: phpize
