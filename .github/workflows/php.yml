@@ -95,7 +95,9 @@ jobs:
                     ls ${{ github.workspace }}\Release
                     ls ${{ github.workspace }}
                     
-                    
+
+                - name: ext
+                  run: php -m
 
 
                   
