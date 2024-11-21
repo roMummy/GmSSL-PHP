@@ -72,11 +72,6 @@ jobs:
                   working-directory: ${{ github.workspace }}\build
                   run: |
                     gmssl version
-
-                - name: include
-                  run: cl.exe ... -I "${{ github.workspace }}\gmssl\GmSSL-3.1.1\include" ...
-          
-                
                     
                 - name: phpize
                   working-directory: ${{ github.workspace }}
