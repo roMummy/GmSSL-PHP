@@ -83,8 +83,12 @@ jobs:
                 - name: log
                   run: ls ${{ github.workspace }}
 
+                - name: look
+                  run: cat ${{ github.workspace }}\Makefile
+      
+
                 - name: nmake
-                  run: nmake /f Makefile.vc VERBOSE=1
+                  run: nmake /f Makefile VERBOSE=1
                     
                 - name: Log
                   run: |
