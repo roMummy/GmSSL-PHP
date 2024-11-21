@@ -18,7 +18,7 @@ jobs:
             matrix:
                 php: ["8.1"]
                 arch: [x64]
-                ts: [nts, ts]
+                ts: [nts]
                 experimental: [false]
         steps:
                 - name: Checkout Xdebug
@@ -75,7 +75,10 @@ jobs:
                     phpize
 
 
-
+                - name: cmake
+                  run: cmake .. -G "NMake Makefiles" -DWIN32=ON
+                - name: nmake
+                  run: nmake
                    
                 - name: Enable Developer Command Prompt
                   uses: ilammy/msvc-dev-cmd@v1
