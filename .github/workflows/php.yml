@@ -79,7 +79,7 @@ jobs:
                   run: phpize
                   
                 - name: config
-                  run: ./configure
+                  run: ./configure --with-gmssl
                 - name: log
                   run: ls ${{ github.workspace }}
 
