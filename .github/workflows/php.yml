@@ -83,7 +83,7 @@ jobs:
                   run: phpize                  
                   
                 - name: config
-                  run: ./configure --enable-gmssl=shared
+                  run: ./configure --with-gmssl=${{ github.workspace }}\gmssl\GmSSL-3.1.1\include --enable-gmssl=shared
                 - name: log
                   run: ls ${{ github.workspace }}
 
