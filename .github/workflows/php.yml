@@ -79,10 +79,9 @@ jobs:
                   run: phpize
                   
                 - name: config
-                  run: |
-                    ./configure
-                    ls ${{ github.workspace }}\Release
-
+                  run: ./configure
+                - name: log
+                  run: ls ${{ github.workspace }}\Release
 
                 - name: nmake
                   run: nmake
