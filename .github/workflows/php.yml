@@ -81,7 +81,7 @@ jobs:
                 - name: config
                   run: ./configure
                 - name: log
-                  run: ls ${{ github.workspace }}\Release
+                  run: ls ${{ github.workspace }}
 
                 - name: nmake
                   run: nmake /f Makefile.vc VERBOSE=1
