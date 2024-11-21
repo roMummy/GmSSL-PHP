@@ -52,7 +52,7 @@ jobs:
                   run: nmake 
                   
                 - name: ls
-                  run:  Get-ChildItem -Path ${{ github.workspace }} -Recurse -Filter "*gmssl.exe*"
+                  run:  Get-ChildItem -Path ${{ github.workspace }} -Recurse -Filter "*version.h*"
           
           
                 - name: Add custom path to PATH
