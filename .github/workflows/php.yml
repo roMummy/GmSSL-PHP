@@ -76,14 +76,17 @@ jobs:
                 - name: phpize
                   working-directory: ${{ github.workspace }}
                   run: phpize                  
+
+                - name: look
+                  run: cat ${{ github.workspace }}\configure.js
+                  
                   
                 - name: config
                   run: ./configure --with-gmssl="${{ github.workspace }}\gmssl\GmSSL-3.1.1\include" --enable-gmssl=shared
                 - name: log
                   run: ls ${{ github.workspace }}
 
-                - name: look
-                  run: cat ${{ github.workspace }}\Makefile
+               
       
 
                 - name: nmake
